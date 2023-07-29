@@ -1,0 +1,35 @@
+A class is a namegroup of properties and functions
+
+A class is a template of an object,
+An object is an instance of a class
+class -> object(s)
+Class can be a data type
+
+class -> logical construct
+object -> physical reality, occupies space in memory
+
+Instance Variables - The variables inside the object
+The '.' operator links reference variable with instance variable
+eg, student1.rollno (reference variable. instance variable)
+'new' keyword does dynamic memory allocation
+We have Complie time = Run time
+eg Student student1 = new Student();
+java is a static type language
+Construcyor is a special type of function inside a class
+When a new object is being created, it goes inside constructor 
+
+We can call a constructor from another constructor
+use this(a,b,c,.....,n) here a, b,...,n are the argument values of the other constructor
+
+In java, primitive datatypes are stored in stack only, hence we don't use new keyword for them
+For those with new keyword, they are the objects stored in heap memory
+
+We can create datatypes using num with the help of wrapper classes
+eg -> Integer num = new Integer(45)
+
+Using 'final' keyword, we can prevent our content to be modified
+convention-> final int INCREASE (all caps) = 2;
+final variables have to be initialised always while declaring it
+
+In objects we can change the value of object but not reassign the object value with final keyword
+In primitive datatypes, we can't do neither
