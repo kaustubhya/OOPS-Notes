@@ -1,0 +1,53 @@
+println internally calls a toString() method (method - function inside a class)
+If we don't include a toString method then java calls a default to string method which can be seen as package.className.hashValue
+eg. com.kunal.intro.A@4432
+
+Packages:-
+
+Packages are just containers or boxes for classes. It is used to keep the class names in compartments
+
+A package is just a folder
+
+We can put files with same class names under different packages, this will prevent us from getting any errors
+
+Packages are stored in a hierarchial manner i.e. folder inside folder inside folder....
+
+eg. package com.ksd.packages.b means file path of the package
+
+file is inside these folders:
+
+com -> ksd -> packages -> b 
+
+com.ksd is the package naming convention of ksd.com (company reverse naming convention) 
+
+When we use a public class in package A, we can import all the contents of it to package B via the 'import' statement.
+
+If a class is private, we can't do it
+
+If 2 files are in the same folder/package, no need to import them.
+
+The properties that are not directly related to the object are called STATIC variables. They are not related but they are commmon to all the objects of the class.
+
+let's take a constructor Human which has age, name, salary and married as its variables.
+
+if we put in a static parameter population here then,
+
+we access it using className(Human).population
+
+we access the others using, this.variables,
+
+if we use 'this' with static, we'll not get correct output
+
+see 30.40 in OOPS 2 video(https://www.youtube.com/watch?v=_Ya6CN13t8k&list=PL9gnSGHSqcno1G3XjUbwzXHL8_EttOuKk&index=5) to understand the explaination better
+
+Note - Whenever we are accessing, modifying or declaring static variable; use className and not objectName
+
+When a member is declared static, it can be accessed before any of the objects of the class are created and without refering to that object like - kunal.name 
+
+Even if no objects or constructor is created, we can still access the static variables
+
+We can declare both methods (i.e. functions inside classes) and variables as static
+
+eg. static void Hi() -> static method
+
+static long age -> static variable
