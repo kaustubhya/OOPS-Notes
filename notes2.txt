@@ -51,3 +51,56 @@ We can declare both methods (i.e. functions inside classes) and variables as sta
 eg. static void Hi() -> static method
 
 static long age -> static variable
+
+Why is main static in psvm method ?
+
+A. Main is the first method that has to run in a Class hence if we want to create any other object inside a particular class make sure that main is run first and it should not be affected by anything else, for this, make main STATIC
+
+Static belongs to the class and not to the object
+
+IMP: Inside a static method, we can't use anything that is non-static
+
+eg ->
+
+Class {
+    psvm {
+        greeting()
+        // non static data inside a static method i.e. this gives error
+    }
+
+    void greeting () {
+        // non static data
+    }
+}
+
+We know that something which is non-static belongs to an object
+
+Non Static methods need an instance
+
+Static methods don't need an instance
+
+We can though have a static member inside a non static one 
+
+eg. Class {
+    psvm {
+        
+      
+    }
+
+    static void fun() {
+        Main obj = new Main();
+        obj.greeting();
+
+        // here we are running a non static instance inside a static method but to run it, we are referencing it via its object which is 'obj' here.
+
+        // Another way could have been to make the non static object static
+        
+        // 'Main' is the className here
+    }
+
+    void greeting () {
+        // non static data
+    }
+}
+
+Static methods can't refer to 'this' and 'super' keywords, in inheritance
