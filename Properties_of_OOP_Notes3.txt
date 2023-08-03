@@ -1,0 +1,109 @@
+Four properties of OOP are:
+1. inheritance
+2. polymorphism
+3. encapsulation
+4. abstraction
+
+aka IPEA
+
+// 1. Inheritance
+
+The concept of Base/Parent Class and Child class, 
+
+Child class apart from having properties/variables of its own will also inherit properties from the base class 
+
+eg. BaseClass(int height, int weight, int size)
+
+ChildClass(int height, int weight, int size, int width, int length) 
+
+to inherit properties, use the 'extends' keyword
+
+eg. ChildClass extends BaseClass
+
+ChildClass can only access the properties of the parent class only if they are public (or private provided they are in the same file)
+
+But ParentClass can not access the ChildClass properties.
+
+VVIMP - It is actually the type of the reference variable (Parent here) and not the type of the object (Child here) that determines what members can be accessed.
+
+Here ParentClass refers to ChildClass.
+
+We can't have a child reference variable and a parent object.
+
+
+// Super keyword
+
+Whenever the sub class needs to refer to the super class from which it is derived, we use the 'super' keyword.
+
+It also works in multi level inheritance cases.
+
+Object class is the most super toplevel class.
+
+Hence every class that we create has object class as its superclass.
+
+Object Class (Super Superclass) -> Super Class A -> Subclass B -> Sub Subclass C ....
+
+Using super we can go from C to B, B to A and A to Object Class
+
+Use Case 1: To call the constructor which is directly above it i.e. call the superclass constructor above it
+
+Use Case 2: To access the superclass keywords, we can use the 'super' keyword as the 'this' keyword.
+
+Initialize the ParentClass before moving on to the ChildClass.
+
+If the super class is not used as a constructor in a Subclass then the default constructor of the superclass will be called.
+
+see 44:40 L3
+
+Superclass variable can be used to reference any object from the Derived Class
+
+// Types of Inheritance
+
+1. Single Inheritance - One class extends another class.
+
+Box -> BoxWeight
+
+2. Multi level Inheritance - One class can inherit from a derived class and the derived class can then become a ParentClass for another new class.
+
+eg. Box -> BoxWeight -> BoxPrize
+
+3. Multiple Inheritance - When one class is extending more than one classes
+eg. A -> C <- B 
+
+A & B are parent classes 
+C is the ChildClass
+
+Java does not support multiple inheritance because if two or more classes have the same properties then Java gets confused on which one to pick
+
+4. Hierarchial Inheritance - One class is inherited by many classes
+
+eg. 
+
+    ←  A ->
+    ↓  ↓  ↓
+    C  B  D
+
+
+A is the ParentClass,
+rest all are ChildClass, All B,C,D have access to A's properties
+
+5. Hybrid Inheritance - Combination of Single and Multiple Inheritance
+
+Due to Multiple Inheritance here, this is also not supported by Java.
+
+    <-  A  ->
+    ↓       ↓
+    C → B ← D
+
+A class can not be its own superclass.
+I.e. Cyclic Inheritance is not allowed 
+
+
+
+
+
+
+// Polymorphism 
+
+Poly -> many
+Morphism -> ways to represent
