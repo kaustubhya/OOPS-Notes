@@ -104,3 +104,71 @@ eg. Class {
 }
 
 Static methods can't refer to 'this' and 'super' keywords, in inheritance
+
+'This' means refering to or dependent on an object, and static does not depend on objects 
+
+// Initializing the variables using a static block
+ 
+eg. class {
+    static int a = 4;
+    static int b;
+
+IMP - Static Block will only run once when the first object is created i.e. when the class is loaded for the first time.
+
+    static {
+        // static block
+        sout("I am in static block");
+        b = a*5;
+    }
+
+    psvm {
+        StaticBlock obj = new StaticBlock();
+
+        sout(StaticBlock.a + " " + StaticBlock.b);
+
+        StaticBlock.b += 3;
+
+        sout(StaticBlock.a + " " + StaticBlock.b);
+
+        StaticBlock obj2 = new StaticBlock();
+
+         sout(StaticBlock.a + " " + StaticBlock.b);
+
+
+    }
+
+}
+
+// Inner Classes - Class inside of Class
+
+eg. 
+public class InnerClasses {
+    class Test {
+
+        Note: Outer classes can not be static
+
+        Note: Inner classes can be static as they are dependent on outer classes
+
+        see Lec 2 1:00:40 for good explaination
+
+    }
+}
+
+Static methods are not dependent on objects, hence they are resolved during compile time
+
+Static methods are class level methods
+
+Objects however are created during run time
+
+<Complie Time is before run time>
+
+// Singleton Class
+
+When we want only one instance/object to be created in a class, use "Singleton Class"
+
+Steps: 1. Don't allow anyone to call the constructor of this class, as constructor creates new objects
+
+Solution - Use private keyword with constructor, this will allow it to work with that file only if we are using multiple files.
+
+Private constructor can be called in the same file.
+
