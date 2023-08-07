@@ -54,3 +54,24 @@ Lang Class and Object Class:
 
 Inside the lang class, there is object class (topmost class in inheritance).
 
+Object class has the following methods:
+
+1. toString() - Gives us the string representation
+
+2. finalize() - Gets called when Garbage Collection hits.
+
+3. hashCode() - Gives us the unique number representation of an object.
+
+4. equals() - Checks the content of the objects and tells if they are equal or not.
+
+// on the other hand, == (an operator) checks if 2 objects are pointing to the same referencing object variable or not.
+
+5. clone() - Later on 
+
+6. instanceof() - It tells us if an object is an instance of 'x' class or not. (gives true or false value)
+
+7. getClass() - Used to get data & information about the object class.
+
+we can't override getClass as it has 'final' keyword with it.
+
+The data received from the getClass method is stored in a 'heap'.
