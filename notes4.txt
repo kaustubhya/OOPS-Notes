@@ -1,0 +1,56 @@
+// More on Encapsulation
+
+Previously, we tallked about how 'private' keyword is used in data hiding and how getters anf setters can extract info from it.
+
+Getters basically, get the value and setters actually set the value.
+
+Basically we access the private data as follows:
+
+We know the private data is only available to those who are in the same file, now if we include getters and setters in the same class and set them to public, we can then inport that class (which is public) to other files and classes.
+We can also import getters and setters from that imported class (which is also public) and can get access to the private data indirectly.
+
+
+Access Modifiers:
+
+1. Public means -  (eg public int num) - We can access it from anywhere.
+
+2. Private means - (eg private int num) - Accessible only in that 'particular file'.
+
+3. Default access modifier - (eg int num) - Accessible only in that 'particular package / folder'.
+
+4. Protected - (eg protected int num) - Can be accessible from a different package's subclass if we use inheritance to inherit that class which has this protected data. 
+
+**** (See the image file to see table) ****
+
+
+
+// Packages (contd)
+
+Types: 
+
+1. User Defined
+2. In-Built
+
+
+InBuilt Packages is a JAVA folder, it is the main folder and inside of it are the following subfolders / packages :
+
+1. lang package - Has things that are essential in Java (Java language specific stuff) (eg. Operators - +, -, * , /; Primitive datatypes etc)
+
+It does not need to be imported, it is imported automatically.
+
+2. io package - It has Input and Output classes (used for file reading). 
+
+3. util package - It contains utility classes, things like data structures and collections framework.
+
+// These following packages will now be used on the development side:
+
+4. applet package - Used to create applets in java.
+
+5. awt package - Used to create GUI and buttons and other stuff.
+
+net package - Used when we want to link a java app with the internet, basically this one deals with networking operations.
+
+Lang Class and Object Class:
+
+Inside the lang class, there is object class (topmost class in inheritance).
+
