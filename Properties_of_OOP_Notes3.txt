@@ -100,10 +100,149 @@ I.e. Cyclic Inheritance is not allowed
 
 
 
-
-
-
 // Polymorphism 
 
 Poly -> many
-Morphism -> ways to represent
+Morphism -> ways to represent a single entity or an item
+
+Any language that does not support polymorphism are called OBJECT BASIS/BASED LANGUAGE, they are not object oriented languages.
+
+JAVA supports polymorphism hence it is an OO LANGUAGE. 
+
+Object eg.:  Shapes shapes = new Shapes();
+
+Shapes = object type 
+
+Polymorphism - Act of representing the same thing in multiple ways. 
+
+
+Type 1: Different Bodies
+
+Shapes body (parent class) and Square body (child class)
+
+Shapes shapes = new Shapes(); → normal way
+
+returns Shapes output
+
+Shapes shapes = new Square(); → polymorphism way
+
+returns Square output, and not shapes
+
+
+Type 2: Different definitions
+
+Box constructor (1, 2, 3)
+Box constructor (1)
+Box constructor (1, 2, 3, 4)
+Box constructor (1, 2)
+
+when we put in values, it'll know which constructor to call.
+
+
+Types of polymorphism:
+
+1. Compile Time / Static Polymorphism
+
+* Achieved by Method Overloading
+(Can also be achived by operator overloading, but java does not support it i.e. operator overloading)
+
+** Method Overloading - When a class has multiple methods with the same name but the number, types, arguments, return type, and the *order of the parameters can be different.
+
+*Order here means the datatypes and not the variables.
+
+eg, multiple constructors
+
+java determines which constructor will be called in during Compile Time. 
+
+2. Runtime / Dynamic Polymorphism
+
+Achieved by Method Overriding
+
+Method Overriding - When a child class has everything same as the parent class like method name, type, parameters etc. but only the 'body' is different, then Child class overrides the ParentClass and it is given priority. 
+
+** How to check Overriding : use '@Override' (this is an annotation)
+if it is error free then the method is being overriden. If there is error then the method is not being overridden.
+
+Let's take an object
+
+Shapes circle = new Circle();
+↓                          ↓  
+reference type          | object type
+↓                       |      ↓
+decides what (content   |  decides which one (one method out of various methods) can
+inside the method i.e.  |         be 'run' (Method Overriding here)
+ParentClass)            |
+can be 'accessed'         |
+
+
+Parent obj = new Child();
+// Here which method will be called, depends on Child. This is called UPCASTING.
+The entire process here is called method overriding.
+
+Q. HOW JAVA DETERMINES THIS INTERNALLY i.e. which can be run and what can be accessed :
+
+A. DYNAMIC METHOD DISPATCH (hence called Dynamic Polymorphism)
+
+Dynamic Method Dispatch (aka Late Binding) - A mechanism by which a call to an overridden method is resolved at Runtime rather than at Compile Time.
+
+By default in java, every class extends the object class.
+
+// 'Final' keyword
+
+'Final' keyword is used to create constants.
+
+We can also use the 'final' keyword to 'prevent overriding'.
+
+Since, a 'final' method can't be overridden, a call to it can be resolved at Compile Time itself rather than at Runtime. This is called 'Early Binding'.
+
+'Final' can also be used with ParentClass to prevent the inheritance.
+Here ChildClass can't inherit ParentClass features now.
+
+If a class is 'final', automatically, all of its methods are final too!!
+
+Static methods can be inherited but can not be overridden - Because static does not depend on object, even if we have same methods in child and parent class, here instead of the ChildClass one, the ParentClass method inside the Main class one will be called here.
+
+**** In Short - Overriding depends on objects, static does not depend on objects, hence Static methods can be overridden.
+
+Polymorphism does not apply to INSTANCE VARIABLES.
+
+
+
+// ENCAPSULATION and ABSTRACTION
+
+Encapsulation - Wrapping up the implementation of the data members and the methods inside of a class. 
+
+Hide all the code and all the methods from the outside world in a class. 
+
+Abstraction - Hiding the unnecessary details but only showing the essential details and valuable information.
+
+Abstraction vs Encapsulation
+
+1. Abstraction solves a design level issue, Encapsulation solves an implementation level issue.
+
+2. Abstraction focuses on the external stuff, Encapsulation focuses on the internal working.
+
+We can achieve Abstraction using abstract classes (eg ArrayList, String, LinkedList) and interfaces.
+
+3. Abstraction is a process of gaining information, encapsulation is a process of containing information.
+
+Data Hiding - Making the stuff private using 'private' keyword.
+
+Also we can use Getters and Setters for Encapsulation here.
+
+Encapsulation vs Data Hiding
+
+Data hiding is focused on data security and Encapsulation is focused on hiding the complexity of the system.
+
+Data Hiding - Private only
+Encapsulation - Public , Private or Protected
+
+Data Hiding can be used to reduce the complexity of the systems.
+
+Data Hiding is achieved via Encapsulation.
+
+Encapsulation is a sub process of data hiding i.e. :
+
+Data Hiding
+↓
+Encapsulation
