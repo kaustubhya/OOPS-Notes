@@ -1,2 +1,21 @@
-Problems with Multiple Inheritance:
+Sometimes the parent class just gives us a generalised form of the function, and it leaves the body of the function empty for the child class,
 
+Such a class determines the nature of the methods that the subclass must implement.
+
+These are known as 'Abstract (Empty Parent)  Methods'.
+
+eg. abstract void career (String name) 
+
+These are also sometimes called: "Child class' responsibility".
+Child Class must override the parent class.
+
+Any class which has one or more abstract methods should be declared as an "Abstract Class".
+
+eg. 
+public abstract class Parent {
+    abstract void career(String name);
+}
+
+We cannot create objects of an abstract class. We need to override them.
+
+We also cannot create abstract constructors. 
