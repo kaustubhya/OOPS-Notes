@@ -1,0 +1,7 @@
+// Java Generics
+
+// ArrayList
+
+How does an ArrayList work: 
+
+It keeps adding in values, once it gets full, it creates a new ArrayList , which is double its size and copies the items of the old ArrayList into this new one and then starts adding in values again like previously and this keeps on going.
