@@ -18,4 +18,205 @@ public abstract class Parent {
 
 We cannot create objects of an abstract class. We need to override them.
 
-We also cannot create abstract constructors. 
+We also cannot create abstract constructors.
+
+We can not create Abstract Static Methods as static methods can not be overridden but abstract methods need to be overridden.
+
+But we can create static methods inside Abstract Classes.
+
+Abstract classes can also contain normal methods.
+
+We also can not have a 'final' abstract class as it cannot be inherited and overridden.
+
+Even if we create a constructor and are not able to create an object from it, we can use the 'super' keyword to reference to it. This way we can initialize the final variables.
+No problem with static variables and methods too.
+
+Multiple Inheritance is not allowed here.
+
+
+// Interfaces 
+
+We use Java Interfaces to resolve multiple inheritance.
+
+Interfaces contain abstract functions (no body of the function is allowed).
+
+By default: Functions are public and abstract in Interfaces.
+
+Variables are static and final by default in Interfaces.
+
+They specify on what the class is doing and not on how it is doing.
+
+They are same as Abstract classes and methods but here we can do multiple inheritance.
+
+
+Classes vs Interfaces
+
+1.
+• An interface will not maintain a state information 
+
+• A class will maintain a state information 
+
+2. 
+• Variables are static and final by default in Interfaces.
+
+• Variables are not static and final by default in Classes.
+
+3. 
+• We cannot create objects of Interfaces
+
+• We can create objects of Classes
+
+4. 
+• We only have 'final and static' variables in Interfaces.
+
+• We have both 'final and non final' variables in abstract classes.
+
+5.
+• Interfaces can have abstract methods only.
+
+• Abstract Classes can have both abstract and non abstract methods
+
+6.
+• Abstract class can provide the implementation of interface but vice versa is not true.
+
+7.
+ • In Interfaces, we use the 'implements' keyword.
+
+ • In inheritance, we use the 'extends' keyword.
+
+8.
+• An interface can also extend other java interfaces.
+
+• An abstract class can only extend one other java class (no multiple inheritance).
+
+9.
+• Java Interfaces are public by default
+
+• Abstract Classes can be public, private or protected.
+
+We can implement multiple interfaces but we can inherit only 1 class.
+
+
+Interface code eg.
+
+public interface Engine {
+    static final int price = 785000;
+    
+    void start();
+    void stop();
+    void acc();
+}
+
+public interface Brake {
+    void brake();
+}
+
+public class Car implements Engine, Brake {
+
+    @override
+    public void brake{
+        sout("I brake");
+    }
+
+    public void start{
+        sout("I start");
+    }
+
+    public void stop{
+        sout("I stop");
+    }
+
+    public void acc{
+        sout("I acc");
+    }
+}
+
+Power of interfaces:
+
+Interfaces don't follow the hierarchy of classes, two classes which are completely unrelated to each other can implement the same interface.
+
+In contrast, in normal and abstract classes, they follow the hierarchy of parent - child relation, i.e. certain objects must be present in both parent and child class for them to get used.
+
+
+We can also add type of the variable as type of the interface.
+
+eg. 
+
+public class Car implements Engine, Brake 
+
+here in main we normally do,
+
+Car car = new Car();
+
+but we can also do:
+
+Engine car = new Car();
+or
+Brake car = new Car();
+
+As interfaces have a bit of an overhead, do not use it casually where performance critical code is involved as it happens at runtime.
+
+To use multiple inheritance, use interfaces with classes
+
+(see 52: 00 to 55:00) for good  explaination
+
+(https://www.youtube.com/watch?v=rgHZa7-Dibg&list=PL9gnSGHSqcno1G3XjUbwzXHL8_EttOuKk&index=5)
+
+
+We can also extend interfaces:
+
+eg. public interface B extends A {
+    // A and B are two interfaces
+}
+
+class to interface -> implements
+
+interface to interface -> extends
+
+
+// Annotations
+
+They are also interfaces, use '@interface' command to create them.
+
+eg. @Override
+
+Static interface methods should always have a body as static methods cannot be overridden and inherited.
+Call it via the interface name.
+
+We generally have the hierarchy of classes, like Object -> Main -> Parent -> Child
+
+here hierarchy of Access Modifiers also follow like:
+public -> protected -> null -> private
+
+In short if child class is private then parent class has to be higher than child (say null or higher) , main class has to be higher (say protected or higher) and object class has to be higher (say public).
+
+If child class is public, keep all other higher classes as public.
+
+// Nested Interfaces 
+
+Nested interface can be public, private or protected but the top level interface should always be public or default.
+
+eg 
+public class A {
+    // nested interface
+    public interface NestedInterface {
+        boolean isOdd(int num);
+    }
+}
+
+class B implements A.NestedInterface {
+    @Override
+    public boolean isOdd(int num) {
+        return (num & 1) == 1
+    }
+}
+
+
+main class {
+    psvm {
+        B obj = new B();
+        sout(obj.isOdd(6));
+    }
+}
+
+ans -> 0 (as 6 is even)
