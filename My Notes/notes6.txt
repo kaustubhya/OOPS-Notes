@@ -5,3 +5,111 @@
 How does an ArrayList work: 
 
 It keeps adding in values, once it gets full, it creates a new ArrayList , which is double its size and copies the items of the old ArrayList into this new one and then starts adding in values again like previously and this keeps on going.
+
+It takes constant time on an average.
+
+ Generics help us in providing a parametrised type.
+
+ In <> of an ArrayList, we can only add classes and not primitives.
+ 
+ eg. ArrayList<Integer> list = new ArrayList<>(); → This is Correct
+
+  eg. ArrayList<int> list = new ArrayList<>(); → This is Wrong
+
+ If we make an ArrayList of type integer, then we face some issues, 
+
+ 1. If we want to write a code for an ArrayList (generic one) that includes all the datatypes, like integer, float, boolean, etc. we have to write a block of code for all of them individually which is a hassle.
+
+ 2. Type Safety - In a non generic ArrayList, say of no specific type, we can add any data of any type and the list has no objection to it. 
+
+ ArrayList<Integer> list = new ArrayList<>();  → A Generic ArrayList
+
+ ArrayList list = new ArrayList();  → A Non Generic ArrayList
+
+ We cannot create an instance of generic type, as the bytecode has no idea about it at runtime.
+
+ Generics were introduced to the Java language to provide tighter type checks at compile time and to support generic programming. To implement generics, the Java compiler applies type erasure to:
+
+    • Replace all type parameters in generic types with their bounds or Object if the type parameters are unbounded. The produced bytecode, therefore, contains only ordinary classes, interfaces, and methods.
+    • Insert type casts if necessary to preserve type safety.
+    • Generate bridge methods to preserve polymorphism in extended generic types.
+
+Type erasure ensures that no new classes are created for parameterized types; consequently, generics incur no runtime overhead.
+
+We cannot instantiate generic types with primitive types.
+
+We cannot create instances of type parameters.
+
+We cannot declare static fields whose types are type parameters.
+
+We cannot use casts or instance of with parametrized types. 
+
+We cannot create arrays of parameterized types.
+
+We cannot create, catch or throw objects of parameterized types. 
+
+We cannot overload a method where the formal parameter types of each overload erase to the same raw type.
+
+
+// Wildcards
+
+Earlier we created objects that accepted all classes (like Integer, Number, Strings etc), to make it accept only certain classes, we will use wildcards. This will now accept only those particular classes and its subclasses.
+
+
+// Comparing Objects 
+
+see video
+
+
+// Lambda Functions
+
+Lambda functions are inline (one line) functions where name of the function is usually not required.
+
+We can also store lambda functions in variables also as we don't need the name of the function here.
+
+eg. arr.forEach((item) -> System.out.println(item * 2));
+
+item has the parameters and sout has the body of the function basically the LHS and RHS of the arrows. 
+
+Consumer type - An operation that accepts a single input argument and returns no result. 
+
+We can also store them in a consumer type:
+
+eg.
+Consumer<Integer> fun = (item) -> System.out.println(item * 2);
+arr.forEach(fun);
+
+
+We can also use interfaces:
+
+interface Sum {
+    int sum(int a , int b);
+}
+
+Sum sum = (a,b) -> a+b;
+
+or 
+
+Sum sum = Integer :: sum
+
+where :: is the method reference (or scope resolution in c++) it means Integer contains sum
+
+
+// Exception Handling
+
+Error vs Exception
+
+Error: 
+• Caused due to lack of resources, eg. Stack Overflow Error
+• Error is non recoverable, i.e. program can not handle an error
+• We cannot write code to handle an error
+
+Exception:
+• Exception is something that prevents the normal flow of the program.
+eg, dividing by 0, null pointer exception in Java
+• We can handle an exception by writing a code
+• Program can handle an exception.
+
+Throwable class in java handles all the errors and exceptions
+
+
