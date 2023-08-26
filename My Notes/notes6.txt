@@ -110,6 +110,72 @@ eg, dividing by 0, null pointer exception in Java
 • We can handle an exception by writing a code
 • Program can handle an exception.
 
-Throwable class in java handles all the errors and exceptions
+Throwable class in java handles all the errors and exceptions.
+
+                Object class
+                    ↓
+        -------Throwable---------
+        ↓                       ↓
+------Exceptions-----           Errors
+↓                   ↓
+Checked         Unchecked
+
+Checked Exceptions are checked during compile time. eg, file not found exception
+
+Unchecked Exceptions are not detected by compiler during compile time but are detected when the compiler is running during runtime. eg, arithmetic exceptions (divide by 0).
+
+try, catch and finally are the keywords used in exception handling:
+
+try and catch - In the 'try' block, try all these things, and if an exception is found, catch it in the 'catch' block with Exception e.
+
+finally - No matter what happens, this block will always execute, whether an exception is thrown in or not.
+
+We can also write blocks of code which throw exceptions.
+
+eg. 
+sttaic int divide (int a, int b) throws ArithmeticException {
+    if(b == 0) {
+        throw new ArithmeticException("Plz don't divide by 0);
+    }
+
+    return a / b;
+}
+
+// throw and throws difference:
+
+throw basically means we are throwing in an exception. 
+
+throws is just used to declare exceptions.
+
+These were the 5 keywords in exception handling.
+
+We can also catch multiple exceptions by using multiple catch blocks.
+
+Note - While using multiple catch blocks, make sure that all the exceptions which have higher priorities are put in first or else we'll get in an error. (eg. ArithmeticException has more priority than exception as exception is parent and ArithmeticException is child and it is more specific).
 
 
+// Creating our own exceptions
+
+We know that every exception extends the main 'Exception' class.
+
+'finally' block is optional and we can only create one 'finally' block.
+
+
+// Object Cloning
+
+Making an exact copy of an object is called object cloning.
+
+Use the 'clone' method in the object class to make these copies.
+
+In Java's lan package there is an interface called 'Clonable' which must be implemented by the class whose clone we want to create for this purpose.
+
+Shallow Copy - Here we make a new copy for the primitives, but for the objects, it does not create a new copy but it (the reference variable) points to the original.
+
+Problem with Shallow Copy:
+If we make a change in the object of the copy, it will also reflect in the object of the original and this is a problem (as both objects in the copy and the original is the same).
+
+primitives - int, char, float etc..
+
+To resolve this problem, use deep copy.
+
+Deep Copy - This creates a copy of everything. The objects of the copy and original are different here. This eliminates the shallow copy problem. 
