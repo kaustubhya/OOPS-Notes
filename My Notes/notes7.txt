@@ -1,0 +1,7 @@
+// Java Collections Framework
+
+Collections - It is just a framework of files and other stuff that we can reuse.
+
+Different Data Structures have some common methods (like .add(), .getFirst(), .sort() etc..). Thus the collection framework helps us in getting these methods of different Data Structures and allows us to reuse it instead of writing a code for it again and again.
+
+There are 2 main interfaces - Collection and Map (see image).
