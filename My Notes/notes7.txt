@@ -5,3 +5,44 @@ Collections - It is just a framework of files and other stuff that we can reuse.
 Different Data Structures have some common methods (like .add(), .getFirst(), .sort() etc..). Thus the collection framework helps us in getting these methods of different Data Structures and allows us to reuse it instead of writing a code for it again and again.
 
 There are 2 main interfaces - Collection and Map (see image).
+
+
+// Vector
+
+Like an arraylist but with a few differences,
+
+• Vectors are synchronised.
+In vectors, only one thread can access the object at a time. If another thread comes in, it'll have to wait till the current thread's job is done. 
+
+• ArrayLists are not synchronised
+In arraylist, multiple threads can access the same object at a time.
+
+• ArrayLists are faster (reason - above point).
+
+eg. List<Integer> vector = new Vector<>();
+
+I recommend to use ArrayLists.
+
+
+// Enums (Enumeration)
+
+Enums are like a group of variables in java that are constant.
+
+syntax:
+ enum Week {
+   Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday 
+
+   // these are enum constants
+   // every single one of them is public, static and final by default.
+   // since it is final, we cannot create child enums 
+   // type is Week
+}
+
+psvm {
+    Week week;
+    week = Week.Monday;
+
+    for(Week day : Week.values()) {
+        System.out.println(day);
+    }
+}
