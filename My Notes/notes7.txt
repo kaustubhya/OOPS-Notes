@@ -36,6 +36,24 @@ syntax:
    // every single one of them is public, static and final by default.
    // since it is final, we cannot create child enums 
    // type is Week
+
+   Week() {
+    // a constructor called, internally it is: public static final Week Monday = new Week();
+    
+    sout("constructor called for " + this);
+   }
+
+   // this constructor is not public or Protected, only private or default
+
+   // why? Because we donot want to create new objects and it is not the concept of enums.
+
+   // Constructor output will be:
+   Constructor called for Monday
+   Constructor called for Tuesday
+   .
+   .
+   .
+   Constructor called for Sunday
 }
 
 psvm {
@@ -44,5 +62,43 @@ psvm {
 
     for(Week day : Week.values()) {
         System.out.println(day);
+        // output - Monday to Sunday
+
+        System.out.println(week);
+        // output - Monday 
+
+        System.out.println(week.ordinal());
+        // output - 0 (for Monday)
+        // ordinal - position of the enum declaration        
     }
 }
+
+When we want a fixed group of objects, we use enums.
+
+// Enums and Inheritance
+
+• All the enums explicitly extend "java.lang.enum_class"
+
+• We can't extend other classes in enums as multiple inheritance is not allowed in java 
+
+• Enums can not be a superclass. 
+
+• The "this" keyword in "Week" constructor above was overridden and it only printed out the enum constants' names.
+
+• Enums can't extend multiple classes but it can implement the interfaces (as many as you want).
+
+Use '==' operator to compare equality
+
+sout(Week.valueOf("Monday")); // this returns the enum constant
+
+Abstract methods are not allowed here.
+A method body is needed. 
+
+We can't create the objects explicitly in enums
+
+It can have constructor and it is executed separately for every enum constant at the time when we load the enum class.
+
+We cannot invoke this constructor explicitly.
+
+If we try to access one enum constant, it fetches us all of the enum constants.
+
